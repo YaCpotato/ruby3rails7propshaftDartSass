@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/myapp
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    environment:
+      REDIS_URL: redis://redis:6379
+    env_file:
+      - .env
+  db:
+    platform: linux/x86_64
+    image: mysql:8.0
+    volumes:
+      - db-store:/var/lib/mysql
+      - ./logs:/var/log/mysql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=development
+      - MYSQL_USER=development
+      - MYSQL_PASSWORD=GdS)FP6*B7zJ
+      - MYSQL_ROOT_PASSWORD=yQqDx.4(Cnue
+      - TZ=Asia/Tokyo
+volumes:
+  db-store:
