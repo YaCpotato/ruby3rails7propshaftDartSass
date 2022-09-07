@@ -9,8 +9,7 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "mysql2"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -69,3 +68,5 @@ group :test do
 end
 
 gem "dartsass-rails", "~> 0.4.0"
+
+gem "devise", "~> 4.8"
