@@ -63,6 +63,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # For enable SCSS live reload.
+  gem "guard-livereload", require: false
+  gem "rack-livereload"
 end
 
 group :test do
