@@ -22,15 +22,11 @@ class EntriesController < ApplicationController
   # POST /entries or /entries.json
   def create
     @entry = Entry.new(entry_params)
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to entry_url(@entry), notice: "Entry was successfully created." }
-        format.json { render :show, status: :created, location: @entry }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    
+    if @entry.save
+      redirect_to @entry, notice: "Entry was successfully created."
+    else
+      render :new, status: :unprocessable_entity # statusが必須
     end
   end
 
