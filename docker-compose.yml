@@ -29,5 +29,11 @@ services:
       - MYSQL_PASSWORD=GdS)FP6*B7zJ
       - MYSQL_ROOT_PASSWORD=yQqDx.4(Cnue
       - TZ=Asia/Tokyo
+  redis:
+    image: redis:latest
+    volumes:
+      - ./redis-data:/data
+    ports:
+      - '6379:6379'
 volumes:
   db-store:
