@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @entry %>
+<%= toc(@entry.body) %>
+<hr>
+<%= markdown(@entry.body) %>
 
 <div>
   <%= link_to "Edit this entry", edit_entry_path(@entry) %> |

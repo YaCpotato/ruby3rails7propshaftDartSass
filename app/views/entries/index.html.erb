@@ -1,23 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Entries limit:3</h1>
-<code>
-  <\%= render(Entry::ListComponent.new(entries: @entries, limit: 3)) %>
-</code>
+<details>
+  <summary>Code: Template</summary>
+  <%= markdown("```erb
+  <%= render(Entry::ListComponent.new(entries: @entries, limit: 3)) %\>
+  ```") %>
+</details>
 <%= render(Entry::ListComponent.new(entries: @entries, limit: 3)) %>
 
 <h1>Entries default limit(5)</h1>
-<code>
-  <\%= render(Entry::ListComponent.new(entries: @entries)) %>
-</code>
-<code>
-class Entry::ListComponent < ViewComponent::Base
-  def initialize(entries:, limit: 5)
-    @entries = entries
-    @limit = limit
+<details>
+  <summary>Code: Template</summary>
+  <%= markdown("```erb
+  <%= render(Entry::ListComponent.new(entries: @entries)) %\>
+  ```") %>
+</details>
+<details>
+  <summary>Code: component.rb</summary>
+  <%= markdown("```ruby
+  class Entry::ListComponent < ViewComponent::Base
+    def initialize(entries:, limit: 5)
+      @entries = entries
+      @limit = limit
+    end
   end
-end
-</code>
+  ```") %>
+</details>
 <%= render(Entry::ListComponent.new(entries: @entries)) %>
 
 <section class="sample-sortable">

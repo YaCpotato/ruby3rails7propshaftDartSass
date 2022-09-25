@@ -7,6 +7,13 @@ h2 {
   border-left: 4px solid #000;
 }
 
+.three-line-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Rouge::Themes::MonokaiSublime ゴリ押し直書きimport */
 
 .highlight table td {
