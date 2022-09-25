@@ -1,5 +1,5 @@
 <div id="entries">
-  <% @entries.each do |entry| %>
+  <% @entries.take(@limit).each do |entry| %>
     <%= render(EntryComponent.new(entry: entry)) %>
   <% end %>
 </div>
