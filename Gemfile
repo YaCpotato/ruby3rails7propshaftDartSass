@@ -81,3 +81,5 @@ end
 gem "dartsass-rails", "~> 0.4.0"
 
 gem "devise", "~> 4.8"
+
+gem "view_component", require: "view_component/engine"

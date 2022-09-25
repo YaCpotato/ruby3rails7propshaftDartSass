@@ -1,15 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Entries</h1>
+<h1>Entries!</h1>
+<%= render(Entry::ListComponent.new(entries: @entries)) %>
 
-<div id="entries">
-  <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
-  <% end %>
-</div>
 <section class="sample-sortable">
 <h3>Sample Sortable.js</h3>
 # views/welcome/index.html.erb

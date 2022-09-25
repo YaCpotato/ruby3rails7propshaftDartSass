@@ -1,0 +1,15 @@
+<!--
+これを使おうとして、/components/entry/list_component.html.erbに
+<%= render(Entry::Component.new(entry: entry)) %>
+を記述しても
+
+uninitialized constant ViewComponent::TemplateError
+
+になる
+-->
+<div>
+  <%= render @entry %>
+  <p>
+    <%= link_to "Show this entry", @entry %>
+  </p>
+</div>
