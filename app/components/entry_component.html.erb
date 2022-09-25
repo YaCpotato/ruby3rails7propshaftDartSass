@@ -1,7 +1,24 @@
 <div>
+
+<%= markdown("```ruby 
+def test 
+  puts 'test' 
+end
+```") %>
+
   <%= render @entry %>
   <%= created_str %>
   <p>
     <%= link_to "Show this entry", @entry %>
   </p>
+  <hr>
+  <h2>toc(@entry.body)</h2>
+  <%= toc(@entry.body) %>
+  <hr>
+  <h2>markdown(@entry.body)</h2>
+  <%= markdown(@entry.body) %>
+  <hr>
+  <h2>plaintext(@entry.body)</h2>
+  <%= plaintext(@entry.body) %>
+  <hr>
 </div>
